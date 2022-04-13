@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import PatientListView
+from .views import PatientListCreateView
 
 
 urlpatterns = [
-    path('patients/', PatientListView.as_view())
+    path('patients/', PatientListCreateView.as_view())
 ]
