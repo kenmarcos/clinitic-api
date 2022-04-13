@@ -45,3 +45,4 @@ class Doctor(AbstractUser):
     REQUIRED_FIELDS = ['first_name', 'last_name', 'crm_number']
 
     objects = CustomUserManager()
+    
