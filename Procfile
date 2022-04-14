@@ -1,0 +1,1 @@
+web: gunicorn clinitic_api.wsgi
