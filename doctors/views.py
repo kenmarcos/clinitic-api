@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, RetrieveAPIView
 from rest_framework.views import APIView, Response, status
 from .models import Doctor
 from .serializers import DoctorSerializer, LoginSerializer
@@ -26,3 +26,11 @@ class LoginView(APIView):
             return Response({'token': token.key})
         
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+class DoctorRetrieveView(RetrieveAPIView):
+
+    queryset = Doctor.objects.all()
+    serializer_class = DoctorSerializer
+
+    lookup_url_kwarg = 'email'
+    lookup_field = 'email'
