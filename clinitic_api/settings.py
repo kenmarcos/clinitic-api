@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a#cmn=5%4cd-)6etc&zff&^o*6hohd6%g+m+m_gdd9^#!7qpju
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clinitic-api.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['clinitic-api.herokuapp.com', 'clinitic-api.up.railway.app', 'localhost']
 
 
 # Application definition
