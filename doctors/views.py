@@ -23,7 +23,8 @@ class LoginView(APIView):
 
         if doctor:
             token = Token.objects.get_or_create(user=doctor)[0]
-            return Response({'token': token.key})
+            doctorData = {'id': doctor.id, 'first_name': doctor.first_name, 'last_name': doctor.last_name, 'email': doctor.email, 'crm_number': doctor.crm_number }
+            return Response({'token': token.key, 'doctor': doctorData})
         
         return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
